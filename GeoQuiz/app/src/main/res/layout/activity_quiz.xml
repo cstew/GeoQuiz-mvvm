@@ -1,0 +1,57 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="questionViewModel"
+            type="com.bignerdranch.android.geoquiz.QuestionViewModel" />
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{questionViewModel.questionText}"
+            android:padding="24dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/true_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:onClickListener="@{questionViewModel.onTrueClickListener}"
+                android:text="@string/true_button"/>
+
+            <Button
+                android:id="@+id/false_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:onClickListener="@{questionViewModel.onFalseClickListener}"
+                android:text="@string/false_button"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:drawableRight="@drawable/arrow_right"
+            app:onClickListener="@{questionViewModel.onNextClickListener}"
+            android:text="@string/next_button"/>
+
+    </LinearLayout>
+
+</layout>
